@@ -981,6 +981,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.1"
+  singular_flutter_sdk:
+    dependency: "direct main"
+    description:
+      name: singular_flutter_sdk
+      sha256: c5cad43d395e18a4e9d83bf14697533089475933d8a216438ff06386722df36f
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.4.1"
   skeletonizer:
     dependency: transitive
     description:

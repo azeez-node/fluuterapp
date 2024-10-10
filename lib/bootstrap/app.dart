@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nylo_framework/nylo_framework.dart';
+import 'package:singular_flutter_sdk/singular.dart';
+import 'package:singular_flutter_sdk/singular_config.dart';
+import 'package:singular_flutter_sdk/singular_link_params.dart';
 
 // ignore: must_be_immutable
 class AppBuild extends StatelessWidget {
@@ -108,5 +111,31 @@ class AppBuild extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void initState() {
+    debugPrint("==singular");
+      //...
+      SingularConfig config = new SingularConfig('bestjazzmusic_8195c00a', 'df1d6a5b9381f0807612e3dbd22cfa2b');
+      // Set hashed User ID if available
+      config.customUserId = "b642b4217b34b1e8d3bd915fc65c4452";
+      
+      // For iOS (Remove this if you are not displaying an ATT prompt)!
+      // config.waitForTrackingAuthorizationWithTimeoutInterval = 300;
+      
+      // To enable SkAdNetwork Support
+      config.skAdNetworkEnabled = true;
+
+config.singularLinksHandler = (SingularLinkParams params) {
+  String? deeplink = params.deeplink;
+  String? passthrough = params.passthrough;
+   debugPrint("==singularhandler $passthrough");
+  bool? isDeferred = params.isDeferred;
+  debugPrint('isDeferred:  ${isDeferred.toString()}');
+  // Add your code here to handle the deep link
+};
+          
+      Singular.start(config);
+
   }
 }

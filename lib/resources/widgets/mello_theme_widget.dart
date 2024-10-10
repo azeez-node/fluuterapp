@@ -11,6 +11,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/resources/widgets/store_logo_widget.dart';
+import 'package:singular_flutter_sdk/singular.dart';
 import '/resources/widgets/product_item_container_widget.dart';
 import '/resources/pages/browse_category_page.dart';
 import '/resources/pages/home_search_page.dart';
@@ -120,7 +121,9 @@ class _MelloThemeWidgetState extends NyState<MelloThemeWidget> {
               size: 35,
             ),
             onPressed: () {
-              routeTo(HomeSearchPage.path);
+              // routeTo(HomeSearchPage.path);
+              Singular.event('buttnlick');
+              Singular.customRevenue('WeeklySubsription', 'INR', 3);
             },
           ),
           Flexible(child: NotificationIcon()),

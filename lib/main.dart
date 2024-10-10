@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '/bootstrap/app.dart';
 import '/bootstrap/boot.dart';
 import 'package:nylo_framework/nylo_framework.dart';
+import 'package:singular_flutter_sdk/singular.dart';
+import 'package:singular_flutter_sdk/singular_config.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
